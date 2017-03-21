@@ -16,7 +16,7 @@
 
     <h2>Movies</h2>
 
-
+    <div ng-if="movieCtrl.moviesToWatch.length > 0">
     <h3>{{movieCtrl.moviesToWatch.length}} <span ng-pluralize count="movieCtrl.moviesToWatch.length" when="{'1': 'movie', 'other': 'movies'}"></span> to watch</h3>
 
     <div ng-repeat="movie in movieCtrl.moviesToWatch | orderBy:'name'">
@@ -24,6 +24,14 @@
       {{movie.genre}}
     </div>
 
+    <br>
+    <form ng-submit="movieCtrl.addMovie()">
+           <div class="add-form">
+             <label>Movie Title</label>
+             <input type="text" ng-model="movieCtrl.moviesToWatch.name" class="form-control" placeholder="Add a movie to watch?" autofocus>
+           </div>
+           <input type="submit" value="Add Movie" class="btn btn-default">
+   </form>
 
 
   </body>
