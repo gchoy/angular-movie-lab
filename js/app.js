@@ -38,7 +38,11 @@ angular
 
     ];
     console.log(vm);
+    newMovie = {};
     vm.addMovie = function(m,g){
-      vm.moviesToWatch.push({name:m,genre:g});
-    }
+      var newMovie = {name:m,genre:g}
+      vm.moviesToWatch.push(newMovie);
+      var newMovie ={};
+    };
+    
   };
