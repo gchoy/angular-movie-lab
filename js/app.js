@@ -32,9 +32,9 @@ angular
         },
         {
 
-          name: 'John Wick 2',
-          genre: 'Action'
-        }
+        name: 'John Wick 2',
+        genre: 'Action'
+      }
 
     ];
     console.log(vm);

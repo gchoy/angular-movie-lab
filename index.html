@@ -14,7 +14,12 @@
   </head>
   <body ng-controller="movieController as movieCtrl">
 
-    <div ng-repeat="movie in movieCtrl.moviesToWatch">
+    <h2>Movies</h2>
+
+
+    <h3>{{movieCtrl.moviesToWatch.length}} <span ng-pluralize count="movieCtrl.moviesToWatch.length" when="{'1': 'movie', 'other': 'movies'}"></span> to watch</h3>
+
+    <div ng-repeat="movie in movieCtrl.moviesToWatch | orderBy:'name'">
       {{movie.name}}
       {{movie.genre}}
     </div>
