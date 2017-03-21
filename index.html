@@ -19,7 +19,7 @@
     <div ng-if="movieCtrl.moviesToWatch.length > 0">
     <h3>{{movieCtrl.moviesToWatch.length}} <span ng-pluralize count="movieCtrl.moviesToWatch.length" when="{'1': 'movie', 'other': 'movies'}"></span> to watch</h3>
 
-    <div ng-repeat="movie in movieCtrl.moviesToWatch | orderBy:'name'">
+    <div ng-repeat="movie in movieCtrl.moviesToWatch | orderBy:'name' | limitTo: movieCtrl.movieLimit"">
       {{movie.name}}
       {{movie.genre}}
     </div>
@@ -37,7 +37,13 @@
 
            <input type="submit" value="Add Movie" class="btn btn-default">
    </form>
-
+   <li class="list-group-item">
+      <p class="list-group-item-text">
+       <a href="#" data-ng-click="movieCtrl.toggleMovieLimit()">
+       Show {{movieCtrl.movieLimit ? "More" : "Less"}}
+      </a>
+      </p>
+  </li>
 
   </body>
 </html>

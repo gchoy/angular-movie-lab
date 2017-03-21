@@ -44,5 +44,13 @@ angular
       vm.moviesToWatch.push(newMovie);
       var newMovie ={};
     };
-    
+    vm.movieLimit = 5;
+    vm.toggleMovieLimit = function() {
+      if (vm.movieLimit) {
+        vm.movieLimit = false;
+      } else {
+        vm.movieLimit = 5;
+      }
+    };
+
   };
