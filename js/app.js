@@ -38,4 +38,7 @@ angular
 
     ];
     console.log(vm);
+    vm.addMovie = function(m,g){
+      vm.moviesToWatch.push({name:m,genre:g});
+    }
   };
